@@ -37,6 +37,13 @@ class MnForm extends HTMLElement {
 
     let form = document.createElement('form')
 
+    form.addEventListener('submit', validate)
+
+    function validate(event) {
+      event.preventDefault()
+      form.classList.add('submitted')
+    }
+
     let attributes = Array
       .from(this.attributes)
       .map(getNameAndValue)
