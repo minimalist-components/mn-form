@@ -17,7 +17,6 @@ class MnForm extends HTMLElement {
       },
       {
         name: 'name',
-        default: 'form',
       },
       {
         name: 'novalidate',
@@ -72,6 +71,9 @@ class MnForm extends HTMLElement {
         this.classList.remove(cssClass)
         form.classList.add(cssClass)
       })
+
+    this.removeAttribute('class')
+    this.removeAttribute('name')
 
     function putInForm(element) {
       form.appendChild(element)
