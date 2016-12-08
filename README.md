@@ -35,6 +35,8 @@ And then, in your html, you can use the tag ```mn-form``` i.e.
 </mn-form>
 ```
 
+Note, the class passed to mn-form will be transfer to a form element inside mn-form
+
 The following attributes from inputs are supported in this component
 
 - [name](http://www.w3schools.com/tags/att_input_name.asp)

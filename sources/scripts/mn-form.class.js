@@ -66,6 +66,13 @@ class MnForm extends HTMLElement {
       .from(this.children)
       .forEach(putInForm)
 
+    Array
+      .from(this.classList)
+      .forEach(cssClass => {
+        this.classList.remove(cssClass)
+        form.classList.add(cssClass)
+      })
+
     function putInForm(element) {
       form.appendChild(element)
     }
