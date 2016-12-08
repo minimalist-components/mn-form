@@ -31,7 +31,7 @@ module.exports = {
     eqeqeq: [required, 'smart'],
     'max-depth': [optional, 3],
     'max-len': [optional, 120],
-    'max-statements': [optional, 20],
+    // 'max-statements': [optional, 20],
     'new-cap': optional,
     'no-extend-native': required,
     'no-mixed-spaces-and-tabs': required,

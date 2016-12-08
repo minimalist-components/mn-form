@@ -53,6 +53,10 @@ class MnForm extends HTMLElement {
 
     attributes = attributes.concat(defaultAttibutes)
 
+    const instanceIndex = Array.from(document.querySelectorAll('mn-form')).indexOf(this)
+    const defaultFormName = `form${instanceIndex > 0 ? instanceIndex : ''}`
+    form.setAttribute('name', this.getAttribute('name') || defaultFormName)
+
     attributes.forEach(setAttribute)
 
     attributeSpecs
