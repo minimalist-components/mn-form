@@ -16,8 +16,7 @@ A form component to mn-inputs.
 bower install --save mn-form
 ```
 
-Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-dialog/tree/master/dist)
-```
+Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-form/tree/master/dist)
 
 ### Usage
 
