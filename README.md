@@ -12,22 +12,16 @@ A form component to mn-inputs.
 
 ### Install
 
-With bower
-
 ```sh
 bower install --save mn-form
 ```
 
-Or just download the main files ```dist/mn-form.js``` in your project, and make a reference to their, like:
-
-```html
-<script src="path/to/dist/vendor.js.js"></script>
-<script src="path/to/dist/mn-form.js"></script>
+Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-dialog/tree/master/dist)
 ```
 
 ### Usage
 
-And then, in your html, you can use the tag ```mn-form``` i.e.
+In your html, you can use the tag ```mn-form``` i.e.
 
 ```html
 <mn-form name='form'>
