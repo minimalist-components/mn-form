@@ -123,4 +123,4 @@ class MnForm extends HTMLElement {
   }
 }
 
-customElements.define('mn-form', MnForm)
+window.customElements.define('mn-form', MnForm)
