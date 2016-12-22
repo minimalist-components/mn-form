@@ -48,8 +48,8 @@ class MnForm extends HTMLElement {
       .map(getNameAndValue)
 
     let defaultAttibutes = attributeSpecs
-      .filter(defaults)
-      .filter(notImplemented)
+      .filter(attr => attr.hasOwnProperty('default'))
+      .filter(defaultAttr => !attributes.some(attribute => attribute.name === defaultAttr.name)) // not implemented
 
     attributes = attributes.concat(defaultAttibutes)
 
@@ -89,14 +89,6 @@ class MnForm extends HTMLElement {
       let name = attr.name
       let value = attr.value
       return {name, value}
-    }
-
-    function defaults(attribute) {
-      return attribute.hasOwnProperty('default')
-    }
-
-    function notImplemented(defaultAttr) {
-      return !attributes.some(attribute => attribute.name === defaultAttr.name)
     }
 
     function setAttribute(attribute) {
