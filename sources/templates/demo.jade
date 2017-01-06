@@ -24,8 +24,8 @@ body
   .layout-fullscreen.layout-centered
     .layout-container
       mn-form.layout-column.layout-sm-row(spellcheck='false')
-        mn-input.flex#username(placeholder='username' required).invalid
-        mn-input.flex#password(placeholder='password' type='password')
+        mn-input.flex#username(placeholder='username' required pattern='^[aeiou]')
+        mn-input.flex#password(placeholder='password' type='password' pattern='aaa')
         mn-input.flex#email(placeholder='email' type='email')
         button.mn-button submit
 

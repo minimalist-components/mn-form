@@ -38,6 +38,11 @@ class MnForm extends HTMLElement {
     function submit(event) {
       event.preventDefault()
       form.classList.add('submitted')
+      const inputs = this.querySelectorAll('.mn-input')
+
+      Array
+        .from(inputs)
+        .forEach(input => input.validate())
 
       if (!form.checkValidity()) {
         return false
