@@ -1,11 +1,8 @@
 class MnForm extends HTMLElement {
   constructor(self) {
     self = super(self)
-    this.setForm()
-    return self
-  }
 
-  setForm() {
+    // set form
     const attributeSpecs = [
       {
         name: 'spellcheck',
@@ -36,12 +33,21 @@ class MnForm extends HTMLElement {
 
     const form = document.createElement('form')
 
-    form.addEventListener('submit', validate)
+    form.addEventListener('submit', submit)
 
-    function validate(event) {
+    function submit(event) {
       event.preventDefault()
-      console.log('submitted', form.checkValidity())
       form.classList.add('submitted')
+
+      if (!form.checkValidity()) {
+        return false
+      }
+
+      if (this.onSubmit === 'function') {
+        this.onSubmit(event)
+      } else {
+        console.error('you need set a callback function to mn-form')
+      }
     }
 
     const attributes = Array
@@ -53,7 +59,7 @@ class MnForm extends HTMLElement {
       .filter(defaultAttr => !attributes.some(attribute => attribute.name === defaultAttr.name)) // not implemented
 
     const instanceIndex = Array.from(document.querySelectorAll('mn-form')).indexOf(this)
-    const defaultFormName = `form${instanceIndex > 0 ? instanceIndex : ''}`
+    const defaultFormName = `form${instanceIndex}`
 
     form.setAttribute('name', this.getAttribute('name') || defaultFormName)
 
@@ -67,7 +73,7 @@ class MnForm extends HTMLElement {
 
     Array
       .from(this.children)
-      .forEach(putInForm)
+      .forEach(element => form.appendChild(element))
 
     Array
       .from(this.classList)
@@ -78,10 +84,6 @@ class MnForm extends HTMLElement {
 
     this.removeAttribute('class')
     this.removeAttribute('name')
-
-    function putInForm(element) {
-      form.appendChild(element)
-    }
 
     this.insertBefore(form, this.firstChild)
 
@@ -112,6 +114,7 @@ class MnForm extends HTMLElement {
         form.setAttribute(attribute.name, attributeValue)
       }
     }
+    return self
   }
 }
 
