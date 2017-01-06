@@ -12,8 +12,8 @@
     "document-register-element": "1.2.0"
   },
   "devDependencies": {
-    "mn-gh-page": "0.0.10",
-    "mn-input": "^0.0.30",
+    "mn-gh-page": "^0.0.12",
+    "mn-input": "^0.0.31",
     "mn-button": "^0.0.10"
   }
 }
