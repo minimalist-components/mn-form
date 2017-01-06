@@ -24,10 +24,28 @@ body
   .layout-fullscreen.layout-centered
     .layout-container
       mn-form.layout-column.layout-sm-row(spellcheck='false')
-        mn-input.flex#username(placeholder='username' required pattern='^[aeiou]')
-        mn-input.flex#password(placeholder='password' type='password' pattern='aaa')
-        mn-input.flex#email(placeholder='email' type='email')
+        mn-input.flex#username(placeholder='username' required)
         button.mn-button submit
+
+  .docs.layout-container
+    mn-code.sh.
+      bower install --save mn-form
+
+    p Or just download the main files, located in dist/
+
+    h3 usage
+    p In your html, you can use the tag ```mn-form``` e.g.
+    mn-code.html.
+      <mn-form name='form'>
+        <!-- inputs goes here -->
+      </mn-form>
+
+    p Important, the class passed to mn-form will be transfer to a form element inside mn-form
+    p The following attributes from forms are supported in this component
+
+    ul
+      li: a(href='http://www.w3schools.com/tags/att_input_name.asp') name
+      li: a(href='http://www.w3schools.com/tags/att_global_spellcheck.asp') spellcheck
 
   block scripts
     script(src='docs/vendor.js')

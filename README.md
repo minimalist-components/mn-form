@@ -20,21 +20,17 @@ Or just download the main files, located in [dist/](https://github.com/minimalis
 
 ### Usage
 
-In your html, you can use the tag ```mn-form``` i.e.
+In your html, you can use the tag ```mn-form``` e.g.
 
 ```html
-<mn-form name='form'>
+<mn-form>
   <!-- inputs goes here -->
 </mn-form>
 ```
 
 Note, the class passed to mn-form will be transfer to a form element inside mn-form
 
-The following attributes from inputs are supported in this component
+The following attributes from forms are supported in this component
 
 - [name](http://www.w3schools.com/tags/att_input_name.asp)
-- [spellcheck](http://www.w3schools.com/tags/att_global_spellcheck.asp)
-<!-- - [readonly](http://www.w3schools.com/tags/att_input_readonly.asp) -->
-<!-- - [required](http://www.w3schools.com/tags/att_input_required.asp) -->
-- [disabled](http://www.w3schools.com/tags/att_input_disabled.asp)
-<!-- - [autocapitalize](https://developers.google.com/web/updates/2015/04/autocapitalize) -->
+- [spellcheck](http://www.w3schools.com/tags/att_global_spellcheck.asp) (true by default)
