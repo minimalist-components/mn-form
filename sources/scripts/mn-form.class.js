@@ -6,7 +6,7 @@ class MnForm extends HTMLElement {
   }
 
   setForm() {
-    let attributeSpecs = [
+    const attributeSpecs = [
       {
         name: 'spellcheck',
         default: 'false',
@@ -34,30 +34,30 @@ class MnForm extends HTMLElement {
       },
     ]
 
-    let form = document.createElement('form')
+    const form = document.createElement('form')
 
     form.addEventListener('submit', validate)
 
     function validate(event) {
       event.preventDefault()
+      console.log('submitted', form.checkValidity())
       form.classList.add('submitted')
     }
 
-    let attributes = Array
+    const attributes = Array
       .from(this.attributes)
       .map(getNameAndValue)
 
-    let defaultAttibutes = attributeSpecs
+    const defaultAttibutes = attributeSpecs
       .filter(attr => attr.hasOwnProperty('default'))
       .filter(defaultAttr => !attributes.some(attribute => attribute.name === defaultAttr.name)) // not implemented
 
-    attributes = attributes.concat(defaultAttibutes)
-
     const instanceIndex = Array.from(document.querySelectorAll('mn-form')).indexOf(this)
     const defaultFormName = `form${instanceIndex > 0 ? instanceIndex : ''}`
+
     form.setAttribute('name', this.getAttribute('name') || defaultFormName)
 
-    attributes.forEach(setAttribute)
+    attributes.concat(defaultAttibutes).forEach(setAttribute)
 
     attributeSpecs
       .filter(attr => attr.remove)
@@ -86,24 +86,24 @@ class MnForm extends HTMLElement {
     this.insertBefore(form, this.firstChild)
 
     function getNameAndValue(attr) {
-      let name = attr.name
-      let value = attr.value
+      const name = attr.name
+      const value = attr.value
       return {name, value}
     }
 
     function setAttribute(attribute) {
-      let attributeSpec = attributeSpecs.filter(spec => spec.name === attribute.name)[0]
+      const attributeSpec = attributeSpecs.filter(spec => spec.name === attribute.name)[0]
       if (!attributeSpec) {
         return false
       }
-      let isDefaultAttribute = attributeSpec.hasOwnProperty('default')
-      let attributeValue = attribute.value
+      const isDefaultAttribute = attributeSpec.hasOwnProperty('default')
+      const attributeValue = attribute.value
 
       if (isDefaultAttribute) {
-        let isValidValue = attributeSpec.hasOwnProperty('values')
+        const isValidValue = attributeSpec.hasOwnProperty('values')
           && attributeSpec.values.indexOf(attributeValue) >= 0
 
-        let value = isValidValue
+        const value = isValidValue
           ? attributeValue
           : attributeSpec.default
 
