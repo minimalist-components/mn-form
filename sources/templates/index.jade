@@ -1,35 +1,9 @@
-html
-  meta(name='viewport' content='width=device-width, user-scalable=no')
-  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
-  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans')
-  style.
-    body {
-      font-family: 'Open Sans', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-body
-  h1(title='lero') Minimalist inputs
+extends demo
 
-  mn-form.test
-    h2 mn-form
-    input(placeholder='username' name='username', required)
-    button(type='submit') Send
+block styles
+  link(rel='stylesheet' href='https://rawgit.com/minimalist-components/mn-form/master/docs/vendor.css')
+  link(rel='stylesheet' href='https://rawgit.com/minimalist-components/mn-form/master/dist/mn-form.css')
 
-  mn-form.test
-    h2 mn-form
-    input(placeholder='username' name='username', required)
-    button(type='submit') Send
-  
-  script(src='vendor.js')
-  script(src='mn-form.js')
-  //- script.
-    'use strict';
-
-    let form = document.querySelector('form')
-    form.addEventListener('submit', validate)
-
-    function validate(event) {
-      form.classList.add('submitted')
-      event.preventDefault()
-    }
-
+block scripts
+  script(src='https://rawgit.com/minimalist-components/mn-form/master/docs/vendor.js')
+  script(src='https://rawgit.com/minimalist-components/mn-form/master/dist/mn-form.js')
