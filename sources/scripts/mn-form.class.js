@@ -121,6 +121,11 @@ class MnForm extends HTMLElement {
     }
     return self
   }
+
+  checkValidity() {
+    const form = this.querySelector('form')
+    return form.checkValidity()
+  }
 }
 
 window.customElements.define('mn-form', MnForm)

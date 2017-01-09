@@ -50,3 +50,11 @@ body
   block scripts
     script(src='docs/vendor.js')
     script(src='dist/mn-form.js')
+    script.
+      var mnForm = document.querySelector('mn-form')
+      mnForm.onSubmit = submit
+      console.log(mnForm.checkValidity())
+
+      function submit() {
+        console.log('submiting')
+      }
