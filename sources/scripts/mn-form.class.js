@@ -38,7 +38,7 @@ class MnForm extends HTMLElement {
     function submit(event) {
       event.preventDefault()
       form.classList.add('submitted')
-      const inputs = this.querySelectorAll('.mn-input')
+      const inputs = form.querySelectorAll('.mn-input')
 
       Array
         .from(inputs)
@@ -48,8 +48,8 @@ class MnForm extends HTMLElement {
         return false
       }
 
-      if (this.onSubmit === 'function') {
-        this.onSubmit(event)
+      if (typeof form.parentNode.onSubmit === 'function') {
+        form.parentNode.onSubmit(event)
       } else {
         console.error('you need set a callback function to mn-form')
       }
