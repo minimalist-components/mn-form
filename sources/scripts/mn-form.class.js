@@ -46,14 +46,14 @@ class MnForm extends HTMLElement {
 
       // if (!form.checkValidity()) {
       const formIsValid = form.querySelectorAll('.mn-input.invalid').length === 0
-      if (formIsValid) {
+      if (!formIsValid) {
         return false
       }
 
       if (typeof form.parentNode.onSubmit === 'function') {
         form.parentNode.onSubmit(event)
       } else {
-        console.error('you need set a callback function to mn-form')
+        console.error('you need set a callback function to mn-form, e.g. form.onSubmit = fn()')
       }
     }
 
