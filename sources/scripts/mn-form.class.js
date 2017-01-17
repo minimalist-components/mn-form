@@ -44,7 +44,9 @@ class MnForm extends HTMLElement {
         .from(inputs)
         .forEach(input => input.validate())
 
-      if (!form.checkValidity()) {
+      // if (!form.checkValidity()) {
+      const formIsValid = form.querySelectorAll('.mn-input.invalid').length === 0
+      if (formIsValid) {
         return false
       }
 
