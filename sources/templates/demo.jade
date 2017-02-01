@@ -21,18 +21,18 @@ body
   h2 mn-form
   include github-corner
 
-  .layout-fullscreen.layout-centered
-    .layout-container
-      mn-form.layout-column.layout-sm-row(spellcheck='false')
+  .mn-layout-fullscreen.mn-layout-centered
+    .mn-layout-container
+      mn-form.mn-layout-column.mn-layout-sm-row(spellcheck='false')
         mn-input.flex#username(placeholder='username' required)
         button.mn-button(type='button') simple button
         button.mn-button(type='submit') submit
 
-  .docs.layout-container
+  .docs.mn-layout-container
     mn-code.sh.
-      bower install --save mn-form
+      npm install --save mn-form
 
-    p Or just download the main files, located in dist/
+    p And bundle dependencies and main files in <strong>dist/</strong> with your preferred tool.
 
     h3 usage
     p In your html, you can use the tag ```mn-form``` e.g.

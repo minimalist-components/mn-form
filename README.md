@@ -1,5 +1,6 @@
-[![Bower version](https://badge.fury.io/bo/mn-form.svg)](https://badge.fury.io/bo/mn-form)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
+[![npm version](https://badge.fury.io/js/mn-form.svg)](https://badge.fury.io/js/mn-form)
+[![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-form.svg)](https://gemnasium.com/github.com/minimalist-components/mn-form)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 
 # mn-form
@@ -13,10 +14,10 @@ A form component to mn-inputs.
 ### Install
 
 ```sh
-bower install --save mn-form
+npm install --save mn-form
 ```
 
-Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-form/tree/master/dist)
+And bundle dependencies and main files in [dist/](https://github.com/minimalist-components/mn-form/tree/master/dist) with your preferred tool.
 
 ### Usage
 
