@@ -1,6 +1,6 @@
 {
   "name": "mn-form",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a form component to mn-inputs",
   "main": "dist/mn-form.js",
   "files": [

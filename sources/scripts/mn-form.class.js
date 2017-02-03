@@ -36,7 +36,6 @@ class MnForm extends HTMLElement {
     form.addEventListener('submit', submit)
 
     function submit(event) {
-      console.log('submit', event)
       event.preventDefault()
       form.classList.add('submitted')
       const inputs = form.querySelectorAll('.mn-input')
