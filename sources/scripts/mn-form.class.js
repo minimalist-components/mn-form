@@ -1,6 +1,7 @@
 class MnForm extends HTMLElement {
   constructor(self) {
     self = super(self)
+    this.setDisabledOrReadOnly()
 
     // set form
     const attributeSpecs = [
@@ -14,6 +15,12 @@ class MnForm extends HTMLElement {
       },
       {
         name: 'name',
+      },
+      {
+        name: 'disabled',
+      },
+      {
+        name: 'readonly',
       },
       {
         name: 'novalidate',
@@ -127,6 +134,17 @@ class MnForm extends HTMLElement {
   checkValidity() {
     const form = this.querySelector('form')
     return form.checkValidity()
+  }
+
+  setDisabledOrReadOnly() {
+    const disabledOrReadOnly = this.getAttribute('disabled') || this.getAttribute('readonly')
+
+    if (disabledOrReadOnly) {
+      const formElements = this.querySelectorAll('.mn-input, .mn-select, .mn-option, .mn-button, input')
+      Array
+        .from(formElements)
+        .forEach(element => element.setAttribute(disabledOrReadOnly, disabledOrReadOnly))
+    }
   }
 }
 

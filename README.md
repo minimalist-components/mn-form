@@ -35,3 +35,5 @@ The following attributes from forms are supported in this component
 
 - [name](http://www.w3schools.com/tags/att_input_name.asp)
 - [spellcheck](http://www.w3schools.com/tags/att_global_spellcheck.asp) (true by default)
+- [disabled](https://www.w3schools.com/tags/att_input_disabled.asp)
+- [readonly](https://www.w3schools.com/tags/att_input_readonly.asp)
