@@ -39,6 +39,7 @@ module.exports = {
     },
     index: 'demo.html',
     notify: false,
+    ui: false,
     reloadDelay: 100,
     open: false,
   },
