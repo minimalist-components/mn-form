@@ -32,12 +32,12 @@ module.exports = {
   browserSync: browserSync.create(),
   browserSyncOptions: {
     server: {
+      index: 'demo.html',
       baseDir: [
         './docs',
         '.',
       ],
     },
-    index: 'demo.html',
     notify: false,
     ui: false,
     reloadDelay: 100,
