@@ -140,7 +140,7 @@ class MnForm extends HTMLElement {
     const disabledOrReadOnly = this.getAttribute('disabled') || this.getAttribute('readonly')
 
     if (disabledOrReadOnly) {
-      const formElements = this.querySelectorAll('.mn-input, .mn-select, .mn-option, .mn-button, input')
+      const formElements = this.querySelectorAll('.mn-input, .mn-select, .mn-option, button.mn-button, input')
       Array
         .from(formElements)
         .forEach(element => element.setAttribute(disabledOrReadOnly, disabledOrReadOnly))
